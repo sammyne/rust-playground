@@ -1,0 +1,3 @@
+[workspace]
+members = ["call-c", "called-by-c"]
+default-members = ["call-c", "called-by-c"]
