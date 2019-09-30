@@ -1,11 +1,20 @@
-extern crate libc;
+use std::ffi;
+use std::os::raw;
 
 extern {
-    fn double_input(input: libc::c_int) -> libc::c_int;
+    fn add_one(arr: *mut u8, arr_len: usize);
+    fn say_hello(who: *const raw::c_char);
 }
 
 fn main() {
-    let input = 4;
-    let output = unsafe { double_input(input) };
-    println!("{} * 2 = {}", input, output);
+    let who = ffi::CString::new("world").unwrap();
+    unsafe {
+        say_hello(who.as_ptr());
+    }
+
+    let arr: &mut [u8] = &mut [1,2,3,4];
+    unsafe{
+        add_one(arr.as_mut_ptr(), arr.len());
+    }
+    println!("arr = {:?}",arr);
 }
