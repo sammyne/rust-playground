@@ -2,13 +2,12 @@ package main
 
 //#cgo LDFLAGS: -L${SRCDIR}/../build/target/debug -lhelloworld
 //#include <stdlib.h>
-//typedef struct HelloWorld hello_world_t;
-//extern void hello_world(const char* who);
-//extern hello_world_t *hello_world_new(const char *who);
-//extern void hello_world_free(hello_world_t *);
-//extern void hello_world_say(const hello_world_t *);
+//#include "hello.h"
 import "C"
-import "unsafe"
+import (
+	"fmt"
+	"unsafe"
+)
 
 func main() {
 	who := C.CString("go")
@@ -20,4 +19,9 @@ func main() {
 	defer C.hello_world_free(hw)
 
 	C.hello_world_say(hw)
+
+	cstr := C.cstring_new()
+	defer C.cstring_free(cstr)
+
+	fmt.Println("cstring =", C.GoString(cstr))
 }

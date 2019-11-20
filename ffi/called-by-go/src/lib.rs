@@ -1,4 +1,4 @@
-use std::ffi::CStr;
+use std::ffi::{CStr, CString};
 use std::os::raw::c_char;
 
 pub struct HelloWorld {
@@ -10,6 +10,25 @@ impl HelloWorld {
         Self { who }
     }
 }
+
+#[no_mangle]
+pub extern "C" fn cstring_free(c_str_ptr: *mut c_char) {
+    if c_str_ptr.is_null() {
+        return;
+    }
+
+    unsafe {
+        CString::from_raw(c_str_ptr);
+    }
+}
+
+#[no_mangle]
+pub extern "C" fn cstring_new() -> *mut c_char {
+    let s = CString::new("Hello World").unwrap();
+
+    s.into_raw()
+}
+
 
 #[no_mangle]
 pub extern "C" fn hello_world(c_who: *const c_char) {
