@@ -1,10 +1,7 @@
 [workspace]
-members = ["hello-local", "world-local"]
+members = ["hello-local", "world", "hello-world"]
 
-exclude = ["hello", "world"]
+exclude = ["hello"]
 
-[patch.hello]
-path = "hello-local"
-
-#[patch.world]
-#path = "world-local"
+[patch."https://github.com/sammyne/rust-playground"]
+hello = { path = "hello-local" }
