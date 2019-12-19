@@ -8,8 +8,8 @@ edition = "2018"
 
 [dependencies.hello]
 git = "https://github.com/sammyne/rust-playground.git"
-rev = "a75e59cb6080cfb3d16165dc98adb9ee300ca1d1"
+rev = "ac5e18d9433c028ea7c0453e45cb68c97d5234b8"
 
 [dependencies.world]
 git = "https://github.com/sammyne/rust-playground.git"
-rev = "a75e59cb6080cfb3d16165dc98adb9ee300ca1d1"
+rev = "ac5e18d9433c028ea7c0453e45cb68c97d5234b8"
