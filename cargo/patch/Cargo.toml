@@ -1,0 +1,10 @@
+[workspace]
+members = ["hello-local", "world-local"]
+
+exclude = ["hello", "world"]
+
+[patch.hello]
+path = "hello-local"
+
+#[patch.world]
+#path = "world-local"

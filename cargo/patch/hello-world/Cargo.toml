@@ -1,0 +1,15 @@
+[package]
+name = "hello-world"
+version = "0.1.0"
+authors = ["sammyne <lixiangmin01@baidu.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies.hello]
+git = "https://github.com/sammyne/rust-playground.git"
+rev = "1f27c2474425ca0beb8986ac01be6d305c8b1475"
+
+[dependencies.world]
+git = "https://github.com/sammyne/rust-playground.git"
+rev = "1f27c2474425ca0beb8986ac01be6d305c8b1475"
