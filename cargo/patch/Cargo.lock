@@ -3,31 +3,28 @@
 [[package]]
 name = "hello"
 version = "0.1.0"
-source = "git+https://github.com/sammyne/rust-playground.git?rev=9c95d048a24e701050ed2d4ba27749c5e3a41dda#9c95d048a24e701050ed2d4ba27749c5e3a41dda"
+source = "git+https://github.com/sammyne/rust-playground.git?rev=ac5e18d9433c028ea7c0453e45cb68c97d5234b8#ac5e18d9433c028ea7c0453e45cb68c97d5234b8"
+
+[[package]]
+name = "hello"
+version = "0.1.0"
 
 [[package]]
 name = "hello-world"
 version = "0.1.0"
 dependencies = [
- "hello 0.1.0 (git+https://github.com/sammyne/rust-playground.git?rev=9c95d048a24e701050ed2d4ba27749c5e3a41dda)",
- "world 0.1.0 (git+https://github.com/sammyne/rust-playground.git?rev=fa11159a322be383803e176ab08e283ded7cab24)",
+ "hello 0.1.0 (git+https://github.com/sammyne/rust-playground.git?rev=ac5e18d9433c028ea7c0453e45cb68c97d5234b8)",
+ "world 0.1.0 (git+https://github.com/sammyne/rust-playground.git?rev=848577ba534b1073bfe3fef7e39de89d8a5778f8)",
 ]
 
 [[package]]
 name = "world"
 version = "0.1.0"
-source = "git+https://github.com/sammyne/rust-playground.git?rev=fa11159a322be383803e176ab08e283ded7cab24#fa11159a322be383803e176ab08e283ded7cab24"
+source = "git+https://github.com/sammyne/rust-playground.git?rev=848577ba534b1073bfe3fef7e39de89d8a5778f8#848577ba534b1073bfe3fef7e39de89d8a5778f8"
 dependencies = [
- "hello 0.1.0 (git+https://github.com/sammyne/rust-playground.git?rev=9c95d048a24e701050ed2d4ba27749c5e3a41dda)",
-]
-
-[[package]]
-name = "world"
-version = "0.1.0"
-dependencies = [
- "hello 0.1.0 (git+https://github.com/sammyne/rust-playground.git?rev=9c95d048a24e701050ed2d4ba27749c5e3a41dda)",
+ "hello 0.1.0 (git+https://github.com/sammyne/rust-playground.git?rev=ac5e18d9433c028ea7c0453e45cb68c97d5234b8)",
 ]
 
 [metadata]
-"checksum hello 0.1.0 (git+https://github.com/sammyne/rust-playground.git?rev=9c95d048a24e701050ed2d4ba27749c5e3a41dda)" = "<none>"
-"checksum world 0.1.0 (git+https://github.com/sammyne/rust-playground.git?rev=fa11159a322be383803e176ab08e283ded7cab24)" = "<none>"
+"checksum hello 0.1.0 (git+https://github.com/sammyne/rust-playground.git?rev=ac5e18d9433c028ea7c0453e45cb68c97d5234b8)" = "<none>"
+"checksum world 0.1.0 (git+https://github.com/sammyne/rust-playground.git?rev=848577ba534b1073bfe3fef7e39de89d8a5778f8)" = "<none>"

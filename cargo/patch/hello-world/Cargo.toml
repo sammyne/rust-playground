@@ -12,4 +12,4 @@ rev = "ac5e18d9433c028ea7c0453e45cb68c97d5234b8"
 
 [dependencies.world]
 git = "https://github.com/sammyne/rust-playground.git"
-rev = "ac5e18d9433c028ea7c0453e45cb68c97d5234b8"
+rev = "848577ba534b1073bfe3fef7e39de89d8a5778f8"
