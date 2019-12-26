@@ -24,4 +24,7 @@ func main() {
 	defer C.cstring_free(cstr)
 
 	fmt.Println("cstring =", C.GoString(cstr))
+
+	hi := C.hi_new()
+	fmt.Println("hi:", hi)
 }

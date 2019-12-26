@@ -10,3 +10,6 @@ name = "helloworld"
 crate-type = ["staticlib"]
 
 [dependencies]
+
+[build-dependencies]
+bindgen = "0.51.1"

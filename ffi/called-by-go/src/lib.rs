@@ -1,6 +1,8 @@
 use std::ffi::{CStr, CString};
 use std::os::raw::c_char;
 
+include!(concat!(env!("OUT_DIR"), "/bindings.rs"));
+
 pub struct HelloWorld {
     who: String,
 }
@@ -9,6 +11,11 @@ impl HelloWorld {
     fn new(who: String) -> Self {
         Self { who }
     }
+}
+
+#[no_mangle]
+pub extern "C" fn hi_new() -> Hi {
+    Hi { x: 123, y: 456 }
 }
 
 #[no_mangle]
@@ -28,7 +35,6 @@ pub extern "C" fn cstring_new() -> *mut c_char {
 
     s.into_raw()
 }
-
 
 #[no_mangle]
 pub extern "C" fn hello_world(c_who: *const c_char) {

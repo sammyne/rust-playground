@@ -5,7 +5,11 @@ extern "C"
 {
 #endif
 
+#include "wrapper.h"
+
     typedef struct HelloWorld hello_world_t;
+
+    Hi hi_new();
 
     char *cstring_new();
     void cstring_free(char *str);
