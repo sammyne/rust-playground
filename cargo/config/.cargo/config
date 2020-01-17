@@ -1,0 +1,7 @@
+[source."https://github.com/sammyne/encoding-rs"]
+git = "https://github.com/sammyne/encoding-rs"
+branch = "master"
+replace-with = "vendored-sources"
+
+[source.vendored-sources]
+directory = "vendor/crates/vendor"
