@@ -5,3 +5,6 @@
 - call-c
 - called-by-c
 - called-by-go
+
+## References
+- [The Rustonomicon - Foreign Function Interface](https://doc.rust-lang.org/nomicon/ffi.html)
