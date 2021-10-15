@@ -16,6 +16,8 @@ extern "C" {
     fn print_hello(h: *const raw::c_void);
 
     fn call_callback_from_rust(v: i32, callback: Callback) -> i32;
+
+    fn print_string_slice(ell: usize, ss: *const *const raw::c_char);
 }
 
 fn main() {
@@ -41,5 +43,17 @@ fn main() {
         let v = call_callback_from_rust(123, increment);
         assert_eq!(v, 124, "call_callback_from_rust");
         println!("call_callback_from_rust is ok");
+    }
+
+    unsafe {
+        let ss = ["hello", "world"].map(|v| ffi::CString::new(v).unwrap());
+
+        let mut c_ss = vec![];
+        for v in &ss {
+            // ss must be borrowed, otherwise string would have been freed
+            c_ss.push(v.as_ptr());
+        }
+
+        print_string_slice(c_ss.len(), c_ss.as_ptr());
     }
 }

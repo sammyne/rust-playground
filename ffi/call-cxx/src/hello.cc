@@ -42,6 +42,14 @@ extern "C"
         printf("hello.x = %d\n", h->x);
     }
 
+    void print_string_slice(int ell, const char **s)
+    {
+        for (auto i = 0; i < ell; ++i)
+        {
+            printf("s[%d]=%s\n", i, s[i]);
+        }
+    }
+
     void say_hello(const char *who)
     {
         printf("hello, %s\n", who);
