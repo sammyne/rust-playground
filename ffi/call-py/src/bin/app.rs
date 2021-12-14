@@ -1,22 +1,20 @@
 use pyo3::exceptions::PyValueError;
 use pyo3::prelude::*;
-use pyo3::types::{PyBytes, PyDict, PyInt, PyList, PyTuple};
+use pyo3::types::{PyBytes, PyDict, PyList, PyTuple};
 
 fn main() -> PyResult<()> {
-    Python::with_gil(quickstart)
+    Python::with_gil(quickstart)?;
+
+    Python::with_gil(run_app)
 }
 
 fn quickstart<'a>(py: Python<'a>) -> PyResult<()> {
-    py.run(
-        r#"
-import sys;
+    py.run(r#"import sys; sys.path.append('py');"#, None, None)?;
 
-sys.path.append('py');
-"#,
-        None,
-        None,
-    )?;
+    run_app(py)
+}
 
+fn run_app(py: Python<'_>) -> PyResult<()> {
     let app_class = py.import("app")?.getattr("App")?;
     let app = app_class.call1(("hello world from rust",))?;
 
